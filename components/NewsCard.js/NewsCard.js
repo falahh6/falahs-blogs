@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Card,
   CardContent,
@@ -6,8 +8,11 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Button } from "../ui/button";
+import { useState } from "react";
+import { Loader2 } from "lucide-react";
 
 const NewsCard = () => {
+  const [loading, setLoading] = useState(false);
   return (
     <Card className="">
       <CardHeader>
@@ -19,9 +24,15 @@ const NewsCard = () => {
           <input
             type="email"
             placeholder="Email"
-            className="mr-[1rem] text-[14px] w-full rounded-md p-1 pl-2 outline-none border border-gray-200 focus:shadow-lg transition duration-200 ease-in-out"
+            className="mr-[1rem] text-[14px] w-full rounded-md p-1 pl-2 outline-none border border-gray-200 focus:shadow-sm transition duration-200 ease-in-out"
           />
-          <Button>Join</Button>
+          <Button>
+            {loading ? (
+              <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+            ) : (
+              "Join"
+            )}
+          </Button>
         </CardContent>
       </CardHeader>
     </Card>
