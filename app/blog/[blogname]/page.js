@@ -48,7 +48,7 @@ const page = ({ params }) => {
       </Link>
       <div className="bg-gray-200 pt-[8rem] pb-[4rem] px-[25%] flex flex-col justify-center border-b border-gray-300 shadow-sm">
         <p className="text-[18px] font-semibold">{blogToDisplay.heading}</p>
-        <p className="text-[10px]">{date.toLocaleDateString()}</p>
+        <p className="text-[10px]">{blogToDisplay.date}</p>
       </div>
       <div className="w-full flex flex-col items-center justify-center mt-[3rem] mb-[6rem]">
         {blogToDisplay.CONTENT.map((section, index) => (

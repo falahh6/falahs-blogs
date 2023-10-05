@@ -6,8 +6,20 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { feedbacks } from "@/lib/users_config";
+import { useRef } from "react";
+import { toast } from "sonner";
 
 export function FeedbackDailog() {
+  const feedbackRef = useRef();
+
+  const handleSubmit = () => {
+    const feedback = feedbackRef.current.value;
+    feedbacks({ feedback });
+    toast.success("Thankyou for your feeback. It Matters");
+    feedbackRef.current.value = "";
+  };
+
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -23,8 +35,9 @@ export function FeedbackDailog() {
             variant="soft"
             placeholder="Your feedback."
             rows={4}
+            ref={feedbackRef}
           />
-          <Button>Submit</Button>
+          <Button onClick={handleSubmit}>Submit</Button>
         </div>
       </DialogContent>
     </Dialog>
