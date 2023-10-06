@@ -2,7 +2,6 @@
 
 import Footer from "@/components/Footer/Footer";
 import { blogPosts } from "@/lib/utils";
-import { ArrowLeft } from "lucide-react";
 import { ArrowLeftIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
 
@@ -46,24 +45,26 @@ const page = ({ params }) => {
       <Link href="/" className="absolute left-[25%] top-[6rem]">
         <ArrowLeftIcon />
       </Link>
-      <div className="bg-gray-200 pt-[8rem] pb-[4rem] px-[25%] flex flex-col justify-center border-b border-gray-300 shadow-sm">
+      <div className="bg-accent pt-[8rem] pb-[4rem] px-[25%] flex flex-col justify-center border-b border-primary-foreground shadow-sm">
         <p className="text-[18px] font-semibold">{blogToDisplay.heading}</p>
-        <p className="text-[10px]">{blogToDisplay.date}</p>
+        <p className="text-[10px] text-muted-foreground">
+          {blogToDisplay.date}
+        </p>
       </div>
       <div className="w-full flex flex-col items-center justify-center mt-[3rem] mb-[6rem]">
         {blogToDisplay.CONTENT.map((section, index) => (
           <div className="w-[50%]" key={index}>
-            <h1 className="text-gray-900 mt-[2rem] mb-[1rem] ">
+            <h1 className="text-foreground mt-[2rem] mb-[1rem] ">
               {section.title}
             </h1>
-            <p className="text-[14px] text-gray-700 font-normal">
+            <p className="text-[14px] text-muted-foreground font-normal">
               {section.content}
             </p>
             {section.points && (
               <ul className="list-disc text-[14px] mt-[4px]">
                 {section.points.map((point, pointIndex) => (
                   <li key={pointIndex}>
-                    <p className=" text-gray-700 ">
+                    <p className=" text-muted-foreground ">
                       <span className="font-medium">{point.title}</span>
                       {point.description}
                     </p>
@@ -75,7 +76,7 @@ const page = ({ params }) => {
               <ul className="list-disc text-[14px] mt-[4px]">
                 {section.advantages.map((advantage, advantageIndex) => (
                   <li key={advantageIndex}>
-                    <p className=" text-gray-700 ">
+                    <p className="text-muted-foreground ">
                       <span className="font-medium">{advantage.title}</span>
                       {advantage.description}
                     </p>
@@ -86,7 +87,7 @@ const page = ({ params }) => {
             {section.benefits && (
               <ul className="list-disc text-[14px] mt-[4px]">
                 {section.benefits.map((benefit, benefitIndex) => (
-                  <li className="mt-[4px] text-gray-700 " key={benefitIndex}>
+                  <li className="mt-[4px] text-foreground " key={benefitIndex}>
                     <p>
                       <span className="font-medium">{benefit.title}</span>
                       {benefit.description}
@@ -100,7 +101,7 @@ const page = ({ params }) => {
                 {section.optimisations.map(
                   (optimisation, optimisationsIndex) => (
                     <li
-                      className="mt-[4px] text-gray-700 "
+                      className="mt-[4px] text-muted-foreground "
                       key={optimisationsIndex}
                     >
                       <p>

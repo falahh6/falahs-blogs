@@ -35,7 +35,10 @@ const NewsCard = () => {
   };
 
   const handleChange = () => {
-    if (emailRef.current.value.trim().includes("@")) {
+    if (
+      emailRef.current.value.trim().includes("@") &&
+      emailRef.current.value.trim().length > 8
+    ) {
       setErrors(false);
     } else {
       setErrors(true);
@@ -53,8 +56,8 @@ const NewsCard = () => {
           <input
             type="email"
             placeholder="Email"
-            className={`${"mr-[1rem] text-[14px] w-full rounded-md p-1 pl-2 outline-none border border-slate-200 focus:border focus:border-gray-500 focus:shadow-md transition duration-200 ease-in-out"} ${
-              errors ? "focus:border-red-500" : "focus:border-gray-500"
+            className={`${"mr-[1rem] text-[14px] w-full rounded-md p-1 pl-2 outline-none border border-input focus:border focus:border-gray-500 focus:shadow-md transition bg-accent duration-200 ease-in-out"} ${
+              errors ? "focus:border-destructive" : "focus:border-gray-500"
             } `}
             ref={emailRef}
             onChange={handleChange}
