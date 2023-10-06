@@ -9,7 +9,7 @@ const Listcards = (props) => {
       <p className="text-[14px] text-foreground py-1">{props.heading}</p>
       <Link
         className="flex align-middle w-fit items-center text-[12px] mt-2 text-muted-foreground hover:text-popover-foreground"
-        href={`/blog/${props.path}`}
+        href={`/${props.path}`}
       >
         Read more <ArrowRightIcon className="ml-[4px]" />
       </Link>

@@ -45,7 +45,10 @@ const page = ({ params }) => {
       <Link href="/" className="absolute left-[25%] top-[6rem]">
         <ArrowLeftIcon />
       </Link>
-      <div className="bg-accent pt-[8rem] pb-[4rem] px-[25%] flex flex-col justify-center border-b border-primary-foreground shadow-sm">
+      <div
+        className="bg-accent pt-[8rem] pb-[4rem] px-[25%] flex flex-col justify-center
+      shadow-sm"
+      >
         <p className="text-[18px] font-semibold">{blogToDisplay.heading}</p>
         <p className="text-[10px] text-muted-foreground">
           {blogToDisplay.date}
