@@ -42,11 +42,14 @@ const page = ({ params }) => {
       variants={pageVariants}
       className="h-full "
     >
-      <Link href="/" className="absolute left-[25%] top-[6rem]">
+      <Link
+        href="/"
+        className="absolute left-[25%] max-sm:left-[2.5rem] top-[6rem] max-sm:top-[2.5rem]"
+      >
         <ArrowLeftIcon />
       </Link>
       <div
-        className="bg-accent pt-[8rem] pb-[4rem] px-[25%] flex flex-col justify-center
+        className="bg-accent pt-[8rem] max-sm:pt-[4rem] pb-[4rem] max-sm:pb-[2rem] px-[25%] max-sm:px-[2.5rem]  flex flex-col justify-center
       shadow-sm"
       >
         <p className="text-[18px] font-semibold">{blogToDisplay.heading}</p>
@@ -54,9 +57,9 @@ const page = ({ params }) => {
           {blogToDisplay.date}
         </p>
       </div>
-      <div className="w-full flex flex-col items-center justify-center mt-[3rem] mb-[6rem]">
+      <div className="w-full flex flex-col items-center justify-center mt-[3rem] max-sm:mt-[2rem] mb-[6rem] max-sm:mb-[4rem]">
         {blogToDisplay.CONTENT.map((section, index) => (
-          <div className="w-[50%]" key={index}>
+          <div className="w-[50%] max-sm:w-[80%]" key={index}>
             <h1 className="text-foreground mt-[2rem] mb-[1rem] ">
               {section.title}
             </h1>

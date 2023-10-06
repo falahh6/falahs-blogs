@@ -4,7 +4,6 @@ import Footer from "@/components/Footer/Footer";
 import Header from "@/components/Header/Header";
 import NewsCard from "@/components/NewsCard.js/NewsCard";
 import Listcards from "@/components/listCard/ListCards";
-import AnimatedTextWord from "@/components/ui/AnimatedText";
 import { blogPosts } from "@/lib/utils";
 import { motion } from "framer-motion";
 
@@ -42,12 +41,15 @@ export default function Home() {
       text-foreground"
     >
       <Header />
-      <main className="flex-grow p-[8rem] pt-0">
-        <div className="pt-[5%] w-full mt-[5rem]">
-          <AnimatedTextWord text={"The Web Insights by Falah"} />
+      <main className="flex-grow w-full flex align-middle justify-center items-center pt-0 ">
+        <div className="pt-[5%] w-4/5  mt-[5rem] mb-[5rem] max-sm:mt-[6rem] max-sm:[6rem] max-sm:w-[90%] max-sm:mx-auto">
+          {/* <AnimatedTextWord text={"The Web Insights by Falah"} /> */}
+          <h1 className="text-[2rem] max-sm:text-[1.5rem] font-semibold">
+            The Web Insights by Falah
+          </h1>
           <p className="text-muted-foreground">Front-end web developer</p>
-          <div className="mt-[6rem] flex flex-row w-full justify-between">
-            <div className="w-[50%]">
+          <div className="mt-[6rem] flex flex-row w-full justify-between max-sm:flex-col">
+            <div className="w-[50%] max-sm:w-full ">
               {blogPosts.map((blog, index) => (
                 <Listcards
                   key={index}
@@ -57,7 +59,7 @@ export default function Home() {
                 />
               ))}
             </div>
-            <div className="w-[47%]">
+            <div className="w-[47%] max-sm:w-full max-sm:m-0 max-sm:mt-[2rem]">
               <NewsCard />
             </div>
           </div>

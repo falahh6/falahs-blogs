@@ -42,7 +42,7 @@ const AnimatedTextWord = ({ text }) => {
       variants={container}
       initial="hidden"
       animate="visible"
-      className="text-[2rem] font-bold"
+      className="text-[2rem] max-sm:text-[1rem] font-bold"
     >
       {words.map((word, index) => (
         <motion.span

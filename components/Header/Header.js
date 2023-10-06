@@ -4,18 +4,20 @@ import {
   TwitterLogoIcon,
 } from "@radix-ui/react-icons";
 import Link from "next/link";
-import { Button } from "../ui/button";
 import { SunIcon } from "@radix-ui/react-icons";
 import { useTheme } from "next-themes";
+import { DropdownMenuDemo } from "../Dropdown/Dropdown";
 
 const Header = () => {
   const { theme, setTheme } = useTheme();
-  console.log(theme);
 
   return (
-    <div className="flex flex-row w-full h-[10%] justify-between bg-background p-[1.5rem] px-[8rem]">
-      <p className="">/ Falah&lsquo;s blogs</p>
-      <div className="flex flex-row w-[10%] justify-between align-middle items-center">
+    <div className="flex flex-row w-full h-[10%] justify-between bg-background p-[1.5rem] px-[8rem] max-sm:px-[2rem]">
+      <p className="max-sm:text-[12px]">/ Falah&lsquo;s blogs</p>
+      <div className="hidden max-sm:block">
+        <DropdownMenuDemo />
+      </div>
+      <div className="flex flex-row w-[12%] justify-between align-middle items-center max-sm:hidden">
         <Link href={"https://x.com/ffalah_"}>
           <TwitterLogoIcon />
         </Link>
